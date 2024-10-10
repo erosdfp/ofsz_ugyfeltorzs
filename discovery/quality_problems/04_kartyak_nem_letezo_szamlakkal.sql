@@ -1,0 +1,13 @@
+select KARTYA_KARTYASZAM,
+       KARTYA_FELVITELDDATUMA,
+       KARTYA_NYITASDATUMA,
+       KARTYA_LEJARAT,
+       KARTYA_BANKSZAMLASZAM,
+       KARTYA_PARTNER_ID
+from IM_BI.dbo.KARTYA k
+left join IM_BI.dbo.BANKSZAMLA b
+    on k.KARTYA_BANKSZAMLASZAM = b.BANKSZ_BANKSZAMLA
+where k.KARTYA_BANKSZAMLASZAM is not null
+and b.BANKSZ_BANKSZAMLA is null
+
+-- Nincs rekord, ez a DQ check valid
