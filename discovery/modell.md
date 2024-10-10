@@ -41,6 +41,14 @@ DIM_CARD {
 int card_key PK
 string card_number
 string card_type
+string name_on_card_cover
+string card_status
+int withdrawal_limit_amount
+int withdrawal_limit_occurence
+int shopping_limit_amount
+int shopping_limit_occurence
+date expiration_date
+
  }
 DIM_DATE {
 int date_key PK
