@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/discovery/ofsz_partnerkod_generalas.sql" dialect="TSQL" />
+    <file url="file://$PROJECT_DIR$/discovery/oracle_card_felterkepezes.sql" dialect="TSQL" />
+    <file url="file://$PROJECT_DIR$/discovery/quality_problems/02_bankszamlak_nem_letezo_ugyfelekkel.sql" dialect="TSQL" />
+    <file url="file://$PROJECT_DIR$/discovery/quality_problems/03_kartyak_szamlak_nelkul.sql" dialect="TSQL" />
+    <file url="file://$PROJECT_DIR$/discovery/quality_problems/04_kartyak_nem_letezo_szamlakkal.sql" dialect="TSQL" />
+    <file url="file://$PROJECT_DIR$/discovery/quality_problems/05_kartyak_nem_letezo_ugyfelekkel.sql" dialect="TSQL" />
+    <file url="file://$PROJECT_DIR$/discovery/ugyfet_profile.sql" dialect="TSQL" />
+    <file url="file://$USER_HOME$/Downloads/22_10_26_cardhistory_kész.sql" dialect="TSQL" />
+    <file url="PROJECT" dialect="TSQL" />
+  </component>
+</project>
