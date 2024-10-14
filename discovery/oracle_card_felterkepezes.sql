@@ -9,7 +9,8 @@ where KARTYA_KARTYASZAM not in (select distinct CardNo
 select top 100 *
 from ORACLE_BI.dbo.CARDINFO
 where CARDINFO.CARDNO not in (select distinct KARTYA_KARTYASZAM
-                              from IM_BI.dbo.KARTYA);
+                              from IM_BI.dbo.KARTYA)
+and CARDSTATUS = 'ACTIVE';
 
 -- 2. Relationship check - partner ids and account ids
 -- Partner ids are not present in Oracle, we can only get this data from IM
@@ -45,10 +46,10 @@ select top 100 EXPIREDATE
 from ORACLE_BI.dbo.CARDINFO
          inner join IM_BI.dbo.KARTYA
                     on CARDNO = KARTYA_KARTYASZAM
-where cast(EXPIREDATE as date) < KARTYA_LEJARAT
+where cast(EXPIREDATE as date) <> KARTYA_LEJARAT
 
--- 5. Card history check - we have one row without a corresponding row in the card table
+-- 5. Card history check - we have 2 rows without a corresponding row in the card table. These are archaic rows, we don't care about them.
 select top 100 *
 from ORACLE_BI.dbo.CARD_HISTORY
-where OPCODE = 'CHANGECARD'
+where OPCODE in ('CHANGECARD', 'ACTIVATECARD')
 and CARDNO not in (select distinct CARDNO from ORACLE_BI.dbo.CARDINFO)
